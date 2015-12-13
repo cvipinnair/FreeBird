@@ -25,7 +25,7 @@ public class FreeBird
   {
     FileSystem fileSystem = FileSystems.getDefault();
     WatchService watchService = fileSystem.newWatchService();
-    Path directory = Paths.get("C:\\FreeBird");
+    Path directory = Paths.get("C:\\FB");
     WatchEvent.Kind<?>[] events = { StandardWatchEventKinds.ENTRY_CREATE};//        StandardWatchEventKinds.ENTRY_DELETE,        StandardWatchEventKinds.ENTRY_MODIFY };
     directory.register(watchService, events);
     while (true) 

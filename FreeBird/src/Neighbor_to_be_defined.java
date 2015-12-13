@@ -12,7 +12,7 @@ public class Neighbor_to_be_defined
 		
 		
 		 final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-		 scheduler.scheduleAtFixedRate(runnable, 0, 24, TimeUnit.HOURS);
+		 scheduler.scheduleAtFixedRate(runnable, 2, 24, TimeUnit.HOURS);
 	}
 	
 	
