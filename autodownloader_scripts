@@ -1,0 +1,15 @@
+option batch abort
+option confirm off
+open sftp://ftpuser:ftpuser@10.89.40.240/   -hostkey="ssh-rsa 2048 89:6c:92:8d:3d:c7:c1:b5:a9:6b:45:01:83:b6:f5:2d"
+cd /opt/oss/server/var/fileint/cm/autoExport
+get *10.89.40.221_%TIMESTAMP#yyyymmdd%01.xml C:\kaba\%TIMESTAMP#yyyymmdd%\
+get *10.162.32.166_%TIMESTAMP#yyyymmdd%01.xml C:\kaba\%TIMESTAMP#yyyymmdd%\
+get *10.162.32.214_%TIMESTAMP#yyyymmdd%01.xml C:\kaba\%TIMESTAMP#yyyymmdd%\
+get *10.89.40.221_%TIMESTAMP#yyyymmdd%01.xml C:\FB\
+get *10.162.32.166_%TIMESTAMP#yyyymmdd%01.xml C:\FB\
+get *10.162.32.214_%TIMESTAMP#yyyymmdd%01.xml C:\FB\
+cd /opt/oss/server/var/fileint/pm/pmexport_%TIMESTAMP#yyyymmdd%
+synchronize local -filemask="*67109395_60*" C:\FB\ /opt/oss/server/var/fileint/pm/pmexport_%TIMESTAMP#yyyymmdd%
+get *67109395_60* C:\FB\
+close
+exit
